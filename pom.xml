@@ -25,8 +25,8 @@
             <url>https://hub.spigotmc.org/nexus/content/groups/public</url>
         </repository>
         <repository>
-            <id>ossrh-snapshots</id>
-            <name>OSSRH Snapshots</name>
+            <id>tealcube-public</id>
+            <name>Teal Cube Public Repository</name>
             <url>http://maven.tealcube.com/artifactory/public</url>
         </repository>
     </repositories>
