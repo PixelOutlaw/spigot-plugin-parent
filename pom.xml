@@ -50,7 +50,7 @@
         <repository>
             <id>tealcube-public</id>
             <name>Teal Cube Public Repository</name>
-            <url>http://maven.tealcube.com/artifactory/public</url>
+            <url>http://maven.tealcube.com/content/groups/public/</url>
         </repository>
     </repositories>
 
@@ -136,11 +136,11 @@
     <distributionManagement>
         <snapshotRepository>
             <id>tealcube-snapshots</id>
-            <url>http://maven.tealcube.com/artifactory/snapshots</url>
+            <url>http://maven.tealcube.com/content/repositories/snapshots</url>
         </snapshotRepository>
         <repository>
             <id>tealcube-repo</id>
-            <url>http://maven.tealcube.com/artifactory/releases</url>
+            <url>http://maven.tealcube.com/content/repositories/releases</url>
         </repository>
     </distributionManagement>
 
