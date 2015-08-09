@@ -27,7 +27,7 @@
 
     <groupId>com.tealcube.minecraft.bukkit</groupId>
     <artifactId>bukkit-plugin-parent</artifactId>
-    <version>0.0.3-SNAPSHOT</version>
+    <version>0.0.4-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>bukkit-plugin-parent</name>
