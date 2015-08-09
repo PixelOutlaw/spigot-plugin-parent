@@ -122,6 +122,7 @@
                     <autoVersionSubmodules>true</autoVersionSubmodules>
                     <allowSnapshots>true</allowSnapshots>
                     <useReleaseProfile>false</useReleaseProfile>
+                    <noDeploy>true</noDeploy>
                     <flowInitContext>
                         <masterBranchName>master</masterBranchName>
                         <developBranchName>development</developBranchName>
