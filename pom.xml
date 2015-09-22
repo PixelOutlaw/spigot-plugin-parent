@@ -167,12 +167,12 @@
 
     <distributionManagement>
         <snapshotRepository>
-            <id>tealcube-snapshots</id>
-            <url>http://maven.tealcube.com/content/repositories/snapshots</url>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
         </snapshotRepository>
         <repository>
-            <id>tealcube-repo</id>
-            <url>http://maven.tealcube.com/content/repositories/releases</url>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
         </repository>
     </distributionManagement>
 
