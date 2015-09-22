@@ -121,8 +121,6 @@
                     <password>${github.password}</password>
                     <autoVersionSubmodules>true</autoVersionSubmodules>
                     <allowSnapshots>true</allowSnapshots>
-                    <useReleaseProfile>false</useReleaseProfile>
-                    <noDeploy>true</noDeploy>
                     <flowInitContext>
                         <masterBranchName>master</masterBranchName>
                         <developBranchName>development</developBranchName>
@@ -131,7 +129,7 @@
                         <hotfixBranchPrefix>hotfix-</hotfixBranchPrefix>
                         <versionTagPrefix>${project.artifactId}-</versionTagPrefix>
                     </flowInitContext>
-                    <tagMessage>tagging release ${project.version}</tagMessage>
+                    <tagMessage>[ci skip] tagging release ${project.version}</tagMessage>
                 </configuration>
             </plugin>
             <plugin>
@@ -159,6 +157,15 @@
                         </goals>
                     </execution>
                 </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-gpg-plugin</artifactId>
+                <version>1.6</version>
+                <configuration>
+                    <keyname>${gpg.keyname}</keyname>
+                    <passphraseServerId>${gpg.keyname}</passphraseServerId>
+                </configuration>
             </plugin>
         </plugins>
     </build>
