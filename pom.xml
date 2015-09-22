@@ -31,6 +31,7 @@
     <packaging>pom</packaging>
 
     <name>bukkit-plugin-parent</name>
+    <description>A parent project for all Teal Cube Games' Bukkit plugins.</description>
 
     <inceptionYear>2015</inceptionYear>
 
@@ -40,6 +41,14 @@
         <url>https://github.com/TealCube/bukkit-plugin-parent.git</url>
         <tag>HEAD</tag>
     </scm>
+
+    <licenses>
+    	<license>
+    		<name>MIT License</name>
+    		<url></url>
+    		<distribution>repo</distribution>
+    	</license>
+    </licenses>
 
     <repositories>
         <repository>
