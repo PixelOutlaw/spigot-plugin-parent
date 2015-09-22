@@ -34,6 +34,7 @@
     <description>A parent project for all Teal Cube Games' Bukkit plugins.</description>
 
     <inceptionYear>2015</inceptionYear>
+    <url>https://github.com/Nunnery/bukkit-plugin-parent</url>
 
     <scm>
         <connection>scm:git:https://github.com/TealCube/bukkit-plugin-parent.git</connection>
@@ -45,10 +46,18 @@
     <licenses>
     	<license>
     		<name>MIT License</name>
-    		<url></url>
+    		<url>https://raw.githubusercontent.com/Nunnery/bukkit-plugin-parent/development/LICENSE</url>
     		<distribution>repo</distribution>
     	</license>
     </licenses>
+
+    <developers>
+    	<developer>
+    		<id>ToppleTheNun</id>
+    		<name>Richard Harrah</name>
+    		<email>topplethenun@tealcubegames.com</email>
+    	</developer>
+    </developers>
 
     <repositories>
         <repository>
