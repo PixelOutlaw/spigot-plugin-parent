@@ -22,7 +22,8 @@
     THE SOFTWARE.
 
 -->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.tealcube.minecraft.bukkit</groupId>
@@ -44,19 +45,21 @@
     </scm>
 
     <licenses>
-    	<license>
-    		<name>MIT License</name>
-    		<url>https://raw.githubusercontent.com/Nunnery/bukkit-plugin-parent/development/LICENSE</url>
-    		<distribution>repo</distribution>
-    	</license>
+        <license>
+            <name>MIT License</name>
+            <url>
+                https://raw.githubusercontent.com/Nunnery/bukkit-plugin-parent/development/LICENSE
+            </url>
+            <distribution>repo</distribution>
+        </license>
     </licenses>
 
     <developers>
-    	<developer>
-    		<id>ToppleTheNun</id>
-    		<name>Richard Harrah</name>
-    		<email>topplethenun@tealcubegames.com</email>
-    	</developer>
+        <developer>
+            <id>ToppleTheNun</id>
+            <name>Richard Harrah</name>
+            <email>topplethenun@tealcubegames.com</email>
+        </developer>
     </developers>
 
     <repositories>
@@ -176,15 +179,6 @@
                     </execution>
                 </executions>
             </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-gpg-plugin</artifactId>
-                <version>1.6</version>
-                <configuration>
-                    <keyname>${gpg.keyname}</keyname>
-                    <passphraseServerId>${gpg.keyname}</passphraseServerId>
-                </configuration>
-            </plugin>
         </plugins>
     </build>
 
@@ -195,7 +189,9 @@
         </snapshotRepository>
         <repository>
             <id>ossrh</id>
-            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+            <url>
+                https://oss.sonatype.org/service/local/staging/deploy/maven2/
+            </url>
         </repository>
     </distributionManagement>
 
@@ -207,6 +203,36 @@
     </properties>
 
     <profiles>
+        <profile>
+            <id>release-profile</id>
+            <activation>
+                <property>
+                    <name>performRelease</name>
+                    <value>true</value>
+                </property>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <version>1.6</version>
+                        <executions>
+                            <execution>
+                                <id>sign-artifacts</id>
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                        <configuration>
+                            <keyname>${gpg.keyname}</keyname>
+                            <passphraseServerId>${gpg.keyname}</passphraseServerId>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
         <profile>
             <id>git</id>
             <activation>
@@ -236,8 +262,7 @@
                     </plugin>
                 </plugins>
             </build>
-            <properties>
-            </properties>
+            <properties></properties>
         </profile>
     </profiles>
 
