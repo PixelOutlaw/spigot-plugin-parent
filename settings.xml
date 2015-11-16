@@ -28,6 +28,11 @@
           xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
     <servers>
         <server>
+            <id>tealcube-repo</id>
+            <username>${env.tealcubeUsername}</username>
+            <password>${env.tealcubePassword}</password>
+        </server>
+        <server>
             <id>ossrh</id>
             <username>${env.nexusUsername}</username>
             <password>${env.nexusPassword}</password>
