@@ -79,7 +79,7 @@
             <dependency>
                 <groupId>org.spigotmc</groupId>
                 <artifactId>spigot-api</artifactId>
-                <version>1.8.8-R0.1-SNAPSHOT</version>
+                <version>1.9-R0.1-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>junit</groupId>
@@ -118,6 +118,10 @@
                         <owner>Teal Cube Games</owner>
                         <email>tealcubegames@gmail.com</email>
                     </properties>
+                    <includes>
+                        <include>src/main/java/com/tealcubegames/**</include>
+                        <include>src/main/java/com/tealcube/**</include>
+                    </includes>
                     <excludes>
                         <exclude>**/README</exclude>
                         <exclude>src/test/resources/**</exclude>
