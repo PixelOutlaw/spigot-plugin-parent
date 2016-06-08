@@ -27,7 +27,7 @@
 
     <groupId>com.tealcube.minecraft.bukkit</groupId>
     <artifactId>bukkit-plugin-parent</artifactId>
-    <version>0.0.14-SNAPSHOT</version>
+    <version>0.0.15-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>bukkit-plugin-parent</name>
@@ -79,7 +79,7 @@
             <dependency>
                 <groupId>org.spigotmc</groupId>
                 <artifactId>spigot-api</artifactId>
-                <version>1.9-R0.1-SNAPSHOT</version>
+                <version>1.9.4-R0.1-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>junit</groupId>
