@@ -27,7 +27,7 @@
 
     <groupId>com.tealcube.minecraft.bukkit</groupId>
     <artifactId>bukkit-plugin-parent</artifactId>
-    <version>0.0.13</version>
+    <version>0.0.15</version>
     <packaging>pom</packaging>
 
     <name>bukkit-plugin-parent</name>
@@ -118,6 +118,10 @@
                         <owner>Teal Cube Games</owner>
                         <email>tealcubegames@gmail.com</email>
                     </properties>
+                    <includes>
+                        <include>src/main/java/com/tealcubegames/**</include>
+                        <include>src/main/java/com/tealcube/**</include>
+                    </includes>
                     <excludes>
                         <exclude>**/README</exclude>
                         <exclude>src/test/resources/**</exclude>
@@ -233,5 +237,4 @@
             </build>
         </profile>
     </profiles>
-
 </project>
