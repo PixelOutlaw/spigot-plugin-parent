@@ -25,21 +25,21 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.tealcube.minecraft.bukkit</groupId>
-    <artifactId>bukkit-plugin-parent</artifactId>
+    <groupId>io.pixeloutlaw</groupId>
+    <artifactId>spigot-plugin-parent</artifactId>
     <version>MC-1.11-SNAPSHOT</version>
     <packaging>pom</packaging>
 
-    <name>bukkit-plugin-parent</name>
-    <description>A parent project for all Teal Cube Games' Bukkit plugins.</description>
+    <name>spigot-plugin-parent</name>
+    <description>A parent project for all of Pixel Outlaw's Spigot plugins.</description>
 
     <inceptionYear>2015</inceptionYear>
-    <url>https://github.com/Nunnery/bukkit-plugin-parent</url>
+    <url>https://github.com/PixelOutlaw/spigot-plugin-parent</url>
 
     <scm>
-        <connection>scm:git:https://github.com/TealCube/bukkit-plugin-parent.git</connection>
-        <developerConnection>scm:git:https://github.com/TealCube/bukkit-plugin-parent.git</developerConnection>
-        <url>https://github.com/TealCube/bukkit-plugin-parent.git</url>
+        <connection>scm:git:https://github.com/PixelOutlaw/spigot-plugin-parent.git</connection>
+        <developerConnection>scm:git:https://github.com/PixelOutlaw/spigot-plugin-parent.git</developerConnection>
+        <url>https://github.com/PixelOutlaw/spigot-plugin-parent.git</url>
         <tag>HEAD</tag>
     </scm>
 
@@ -47,7 +47,7 @@
         <license>
             <name>MIT License</name>
             <url>
-                https://raw.githubusercontent.com/Nunnery/bukkit-plugin-parent/development/LICENSE
+                https://raw.githubusercontent.com/PixelOutlaw/spigot-plugin-parent/development/LICENSE
             </url>
             <distribution>repo</distribution>
         </license>
