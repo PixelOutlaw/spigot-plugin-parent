@@ -27,7 +27,7 @@
 
     <groupId>com.tealcube.minecraft.bukkit</groupId>
     <artifactId>bukkit-plugin-parent</artifactId>
-    <version>MC-1.10-SNAPSHOT</version>
+    <version>MC-1.11-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>bukkit-plugin-parent</name>
@@ -68,9 +68,9 @@
             <url>https://hub.spigotmc.org/nexus/content/groups/public</url>
         </repository>
         <repository>
-            <id>tealcube-public</id>
+            <id>pixeloutlaw-public</id>
             <name>Teal Cube Public Repository</name>
-            <url>http://maven.tealcube.com/content/groups/public/</url>
+            <url>https://maven.pixeloutlaw.io/artifactory/public</url>
         </repository>
     </repositories>
 
@@ -79,7 +79,7 @@
             <dependency>
                 <groupId>org.spigotmc</groupId>
                 <artifactId>spigot-api</artifactId>
-                <version>1.10-R0.1-SNAPSHOT</version>
+                <version>1.11-R0.1-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>junit</groupId>
@@ -115,12 +115,13 @@
                 <configuration>
                     <header>com/mycila/maven/plugin/license/templates/MIT.txt</header>
                     <properties>
-                        <owner>Teal Cube Games</owner>
-                        <email>tealcubegames@gmail.com</email>
+                        <owner>Pixel Outlaw</owner>
+                        <email>topplethenunnery@gmail.com</email>
                     </properties>
                     <includes>
                         <include>src/main/java/com/tealcubegames/**</include>
                         <include>src/main/java/com/tealcube/**</include>
+                        <include>src/main/java/io/pixeloutlaw/**</include>
                     </includes>
                     <excludes>
                         <exclude>**/README</exclude>
@@ -189,12 +190,12 @@
 
     <distributionManagement>
         <snapshotRepository>
-            <id>tealcube-repo</id>
-            <url>http://maven.tealcube.com/content/repositories/snapshots</url>
+            <id>pixeloutlaw-snapshots</id>
+            <url>https://maven.pixeloutlaw.io/artifactory/maven-snapshots</url>
         </snapshotRepository>
         <repository>
-            <id>tealcube-repo</id>
-            <url>http://maven.tealcube.com/content/repositories/releases</url>
+            <id>pixeloutlaw-releases</id>
+            <url>https://maven.pixeloutlaw.io/artifactory/maven-releases</url>
         </repository>
     </distributionManagement>
 
