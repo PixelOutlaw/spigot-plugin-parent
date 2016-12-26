@@ -22,7 +22,8 @@
     THE SOFTWARE.
 
 -->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>io.pixeloutlaw</groupId>
@@ -57,7 +58,7 @@
         <developer>
             <id>ToppleTheNun</id>
             <name>Richard Harrah</name>
-            <email>topplethenun@tealcubegames.com</email>
+            <email>topplethenun@pixeloutlaw.io</email>
         </developer>
     </developers>
 
@@ -66,11 +67,6 @@
             <id>spigot-repo</id>
             <name>Spigot Repository</name>
             <url>https://hub.spigotmc.org/nexus/content/groups/public</url>
-        </repository>
-        <repository>
-            <id>pixeloutlaw-public</id>
-            <name>Teal Cube Public Repository</name>
-            <url>https://maven.pixeloutlaw.io/artifactory/public</url>
         </repository>
     </repositories>
 
