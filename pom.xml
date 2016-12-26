@@ -27,7 +27,7 @@
 
     <groupId>io.pixeloutlaw</groupId>
     <artifactId>spigot-plugin-parent</artifactId>
-    <version>MC-1.11-SNAPSHOT</version>
+    <version>MC-1.11.2-0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>spigot-plugin-parent</name>
@@ -79,7 +79,7 @@
             <dependency>
                 <groupId>org.spigotmc</groupId>
                 <artifactId>spigot-api</artifactId>
-                <version>1.11-R0.1-SNAPSHOT</version>
+                <version>1.11.2-R0.1-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>junit</groupId>
@@ -189,13 +189,10 @@
     </build>
 
     <distributionManagement>
-        <snapshotRepository>
-            <id>pixeloutlaw-snapshots</id>
-            <url>https://maven.pixeloutlaw.io/artifactory/maven-snapshots</url>
-        </snapshotRepository>
         <repository>
-            <id>pixeloutlaw-releases</id>
-            <url>https://maven.pixeloutlaw.io/artifactory/maven-releases</url>
+            <id>bintray-pixeloutlaw-pixeloutlaw-jars</id>
+            <name>pixeloutlaw-pixeloutlaw-jars</name>
+            <url>https://api.bintray.com/maven/pixeloutlaw/pixeloutlaw-jars/spigot-plugin-parent/;publish=1</url>
         </repository>
     </distributionManagement>
 
