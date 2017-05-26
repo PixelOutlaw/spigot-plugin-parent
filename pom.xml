@@ -23,217 +23,236 @@
 
 -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
+  <modelVersion>4.0.0</modelVersion>
 
-    <groupId>io.pixeloutlaw</groupId>
-    <artifactId>spigot-plugin-parent</artifactId>
-    <version>1.11.2.3</version>
-    <packaging>pom</packaging>
+  <groupId>io.pixeloutlaw</groupId>
+  <artifactId>spigot-plugin-parent</artifactId>
+  <version>1.11.2.4</version>
+  <packaging>pom</packaging>
 
-    <name>spigot-plugin-parent</name>
-    <description>A parent project for all of Pixel Outlaw's Spigot plugins.</description>
+  <name>spigot-plugin-parent</name>
+  <description>A parent project for all of Pixel Outlaw's Spigot plugins.</description>
 
-    <inceptionYear>2015</inceptionYear>
-    <url>https://github.com/PixelOutlaw/spigot-plugin-parent</url>
+  <inceptionYear>2015</inceptionYear>
+  <url>https://github.com/PixelOutlaw/spigot-plugin-parent</url>
 
-    <scm>
-        <connection>scm:git:https://github.com/PixelOutlaw/spigot-plugin-parent.git</connection>
-        <developerConnection>scm:git:https://github.com/PixelOutlaw/spigot-plugin-parent.git</developerConnection>
-        <url>https://github.com/PixelOutlaw/spigot-plugin-parent.git</url>
-        <tag>HEAD</tag>
-    </scm>
+  <scm>
+    <connection>scm:git:https://github.com/PixelOutlaw/spigot-plugin-parent.git</connection>
+    <developerConnection>scm:git:https://github.com/PixelOutlaw/spigot-plugin-parent.git</developerConnection>
+    <url>https://github.com/PixelOutlaw/spigot-plugin-parent.git</url>
+    <tag>HEAD</tag>
+  </scm>
 
-    <licenses>
-        <license>
-            <name>MIT License</name>
-            <url>
-                https://raw.githubusercontent.com/PixelOutlaw/spigot-plugin-parent/development/LICENSE
-            </url>
-            <distribution>repo</distribution>
-        </license>
-    </licenses>
+  <licenses>
+    <license>
+      <name>MIT License</name>
+      <url>
+        https://raw.githubusercontent.com/PixelOutlaw/spigot-plugin-parent/development/LICENSE
+      </url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
 
-    <developers>
-        <developer>
-            <id>ToppleTheNun</id>
-            <name>Richard Harrah</name>
-            <email>topplethenun@pixeloutlaw.io</email>
-        </developer>
-    </developers>
+  <developers>
+    <developer>
+      <id>ToppleTheNun</id>
+      <name>Richard Harrah</name>
+      <email>topplethenun@pixeloutlaw.io</email>
+    </developer>
+  </developers>
 
-    <repositories>
-        <repository>
-            <id>spigot-repo</id>
-            <name>Spigot Repository</name>
-            <url>https://hub.spigotmc.org/nexus/content/groups/public</url>
-        </repository>
-    </repositories>
+  <repositories>
+    <repository>
+      <id>spigot-repo</id>
+      <name>Spigot Repository</name>
+      <url>https://hub.spigotmc.org/nexus/content/groups/public</url>
+    </repository>
+  </repositories>
 
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>org.spigotmc</groupId>
-                <artifactId>spigot-api</artifactId>
-                <version>1.11.2-R0.1-SNAPSHOT</version>
-            </dependency>
-            <dependency>
-                <groupId>junit</groupId>
-                <artifactId>junit</artifactId>
-                <version>4.12</version>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.spigotmc</groupId>
+        <artifactId>spigot-api</artifactId>
+        <version>1.11.2-R0.1-SNAPSHOT</version>
+      </dependency>
+      <dependency>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+        <version>4.12</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
 
-    <build>
-        <defaultGoal>install</defaultGoal>
-        <resources>
-            <resource>
-                <targetPath>.</targetPath>
-                <directory>${project.basedir}/src/main/resources</directory>
-                <filtering>true</filtering>
-            </resource>
-        </resources>
+  <build>
+    <defaultGoal>install</defaultGoal>
+    <resources>
+      <resource>
+        <targetPath>.</targetPath>
+        <directory>${project.basedir}/src/main/resources</directory>
+        <filtering>true</filtering>
+      </resource>
+    </resources>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.3</version>
+        <configuration>
+          <source>${project.build.javaVersion}</source>
+          <target>${project.build.javaVersion}</target>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>com.mycila</groupId>
+        <artifactId>license-maven-plugin</artifactId>
+        <version>2.11</version>
+        <configuration>
+          <header>com/mycila/maven/plugin/license/templates/MIT.txt</header>
+          <properties>
+            <owner>Pixel Outlaw</owner>
+            <email>topplethenunnery@gmail.com</email>
+          </properties>
+          <includes>
+            <include>src/main/java/com/tealcubegames/**</include>
+            <include>src/main/java/com/tealcube/**</include>
+            <include>src/main/java/io/pixeloutlaw/**</include>
+          </includes>
+          <excludes>
+            <exclude>**/README</exclude>
+            <exclude>src/test/resources/**</exclude>
+            <exclude>src/main/resources/**</exclude>
+          </excludes>
+        </configuration>
+        <executions>
+          <execution>
+            <goals>
+              <goal>check</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>external.atlassian.jgitflow</groupId>
+        <artifactId>jgitflow-maven-plugin</artifactId>
+        <version>1.0-m5.1</version>
+        <configuration>
+          <username>${github.username}</username>
+          <password>${github.password}</password>
+          <autoVersionSubmodules>true</autoVersionSubmodules>
+          <allowSnapshots>true</allowSnapshots>
+          <noDeploy>true</noDeploy>
+          <flowInitContext>
+            <masterBranchName>master</masterBranchName>
+            <developBranchName>develop</developBranchName>
+            <featureBranchPrefix>feature/</featureBranchPrefix>
+            <releaseBranchPrefix>release/</releaseBranchPrefix>
+            <hotfixBranchPrefix>hotfix/</hotfixBranchPrefix>
+            <versionTagPrefix>${project.artifactId}-</versionTagPrefix>
+          </flowInitContext>
+          <tagMessage>[ci skip] tagging release ${project.version}</tagMessage>
+          <useReleaseProfile>false</useReleaseProfile>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-source-plugin</artifactId>
+        <version>2.2.1</version>
+        <executions>
+          <execution>
+            <id>attach-sources</id>
+            <goals>
+              <goal>jar-no-fork</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <version>2.9.1</version>
+        <executions>
+          <execution>
+            <id>attach-javadocs</id>
+            <goals>
+              <goal>jar</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+
+  <distributionManagement>
+
+  </distributionManagement>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.build.javaVersion>1.7</project.build.javaVersion>
+    <project.build.scmBranch>UNKNOWN</project.build.scmBranch>
+    <project.build.scmCommit>UNKNOWN</project.build.scmCommit>
+  </properties>
+
+  <profiles>
+    <profile>
+      <id>git</id>
+      <activation>
+        <file>
+          <exists>${basedir}/.git</exists>
+        </file>
+      </activation>
+      <build>
         <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.3</version>
+          <plugin>
+            <groupId>pl.project13.maven</groupId>
+            <artifactId>git-commit-id-plugin</artifactId>
+            <version>2.1.15</version>
+            <executions>
+              <execution>
+                <id>git-commit-id</id>
+                <phase>validate</phase>
+                <goals>
+                  <goal>revision</goal>
+                </goals>
                 <configuration>
-                    <source>${project.build.javaVersion}</source>
-                    <target>${project.build.javaVersion}</target>
+                  <dotGitDirectory>${project.basedir}/.git</dotGitDirectory>
+                  <skipPoms>false</skipPoms>
                 </configuration>
-            </plugin>
-            <plugin>
-                <groupId>com.mycila</groupId>
-                <artifactId>license-maven-plugin</artifactId>
-                <version>2.11</version>
-                <configuration>
-                    <header>com/mycila/maven/plugin/license/templates/MIT.txt</header>
-                    <properties>
-                        <owner>Pixel Outlaw</owner>
-                        <email>topplethenunnery@gmail.com</email>
-                    </properties>
-                    <includes>
-                        <include>src/main/java/com/tealcubegames/**</include>
-                        <include>src/main/java/com/tealcube/**</include>
-                        <include>src/main/java/io/pixeloutlaw/**</include>
-                    </includes>
-                    <excludes>
-                        <exclude>**/README</exclude>
-                        <exclude>src/test/resources/**</exclude>
-                        <exclude>src/main/resources/**</exclude>
-                    </excludes>
-                </configuration>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>check</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>external.atlassian.jgitflow</groupId>
-                <artifactId>jgitflow-maven-plugin</artifactId>
-                <version>1.0-m5.1</version>
-                <configuration>
-                    <username>${github.username}</username>
-                    <password>${github.password}</password>
-                    <autoVersionSubmodules>true</autoVersionSubmodules>
-                    <allowSnapshots>true</allowSnapshots>
-                    <noDeploy>true</noDeploy>
-                    <flowInitContext>
-                        <masterBranchName>master</masterBranchName>
-                        <developBranchName>develop</developBranchName>
-                        <featureBranchPrefix>feature/</featureBranchPrefix>
-                        <releaseBranchPrefix>release/</releaseBranchPrefix>
-                        <hotfixBranchPrefix>hotfix/</hotfixBranchPrefix>
-                        <versionTagPrefix>${project.artifactId}-</versionTagPrefix>
-                    </flowInitContext>
-                    <tagMessage>[ci skip] tagging release ${project.version}</tagMessage>
-                    <useReleaseProfile>false</useReleaseProfile>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-source-plugin</artifactId>
-                <version>2.2.1</version>
-                <executions>
-                    <execution>
-                        <id>attach-sources</id>
-                        <goals>
-                            <goal>jar-no-fork</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-javadoc-plugin</artifactId>
-                <version>2.9.1</version>
-                <executions>
-                    <execution>
-                        <id>attach-javadocs</id>
-                        <goals>
-                            <goal>jar</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
+              </execution>
+            </executions>
+          </plugin>
         </plugins>
-    </build>
-
-    <distributionManagement>
+      </build>
+    </profile>
+    <profile>
+      <id>pixeloutlaw-distribution</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+      <distributionManagement>
         <repository>
-            <id>pixeloutlaw-releases</id>
-            <name>PixelOutlaw Repository</name>
-            <url>https://artifactory.pixeloutlaw.io/artifactory/maven-releases</url>
+          <id>pixeloutlaw-releases</id>
+          <name>PixelOutlaw Repository</name>
+          <url>https://artifactory.pixeloutlaw.io/artifactory/maven-releases</url>
         </repository>
         <snapshotRepository>
-            <id>pixeloutlaw-snapshots</id>
-            <name>PixelOutlaw Snapshot Repository</name>
-            <url>https://artifactory.pixeloutlaw.io/artifactory/maven-snapshots</url>
+          <id>pixeloutlaw-snapshots</id>
+          <name>PixelOutlaw Snapshot Repository</name>
+          <url>https://artifactory.pixeloutlaw.io/artifactory/maven-snapshots</url>
         </snapshotRepository>
-    </distributionManagement>
-
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.build.javaVersion>1.7</project.build.javaVersion>
-        <project.build.scmBranch>UNKNOWN</project.build.scmBranch>
-        <project.build.scmCommit>UNKNOWN</project.build.scmCommit>
-    </properties>
-
-    <profiles>
-        <profile>
-            <id>git</id>
-            <activation>
-                <file>
-                    <exists>${basedir}/.git</exists>
-                </file>
-            </activation>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>pl.project13.maven</groupId>
-                        <artifactId>git-commit-id-plugin</artifactId>
-                        <version>2.1.15</version>
-                        <executions>
-                            <execution>
-                                <id>git-commit-id</id>
-                                <phase>validate</phase>
-                                <goals>
-                                    <goal>revision</goal>
-                                </goals>
-                                <configuration>
-                                    <dotGitDirectory>${project.basedir}/.git</dotGitDirectory>
-                                    <skipPoms>false</skipPoms>
-                                </configuration>
-                            </execution>
-                        </executions>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-    </profiles>
+      </distributionManagement>
+    </profile>
+    <profile>
+      <id>bintray-distribution</id>
+      <distributionManagement>
+        <repository>
+          <id>bintray-pixeloutlaw-pixeloutlaw-jars</id>
+          <name>pixeloutlaw-pixeloutlaw-jars</name>
+          <url>https://api.bintray.com/maven/pixeloutlaw/pixeloutlaw-jars/spigot-plugin-parent/;publish=1</url>
+        </repository>
+      </distributionManagement>
+    </profile>
+  </profiles>
 
 </project>
