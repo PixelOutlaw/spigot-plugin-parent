@@ -27,7 +27,7 @@
 
   <groupId>io.pixeloutlaw</groupId>
   <artifactId>spigot-plugin-parent</artifactId>
-  <version>1.11.2.4</version>
+  <version>1.12.0.0</version>
   <packaging>pom</packaging>
 
   <name>spigot-plugin-parent</name>
@@ -74,7 +74,7 @@
       <dependency>
         <groupId>org.spigotmc</groupId>
         <artifactId>spigot-api</artifactId>
-        <version>1.11.2-R0.1-SNAPSHOT</version>
+        <version>1.12-R0.1-SNAPSHOT</version>
       </dependency>
       <dependency>
         <groupId>junit</groupId>
@@ -137,8 +137,6 @@
         <artifactId>jgitflow-maven-plugin</artifactId>
         <version>1.0-m5.1</version>
         <configuration>
-          <username>${github.username}</username>
-          <password>${github.password}</password>
           <autoVersionSubmodules>true</autoVersionSubmodules>
           <allowSnapshots>true</allowSnapshots>
           <noDeploy>true</noDeploy>
@@ -189,7 +187,7 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <project.build.javaVersion>1.7</project.build.javaVersion>
+    <project.build.javaVersion>1.8</project.build.javaVersion>
     <project.build.scmBranch>UNKNOWN</project.build.scmBranch>
     <project.build.scmCommit>UNKNOWN</project.build.scmCommit>
   </properties>
