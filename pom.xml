@@ -27,7 +27,7 @@
 
     <groupId>io.pixeloutlaw</groupId>
     <artifactId>spigot-plugin-parent</artifactId>
-    <version>1.12.2.0</version>
+    <version>1.13.0.0</version>
     <packaging>pom</packaging>
 
     <name>spigot-plugin-parent</name>
@@ -63,6 +63,10 @@
 
     <repositories>
         <repository>
+            <id>destroystokyo-repo</id>
+            <url>https://repo.destroystokyo.com/repository/maven-public/</url>
+        </repository>
+        <repository>
             <id>spigot-repo</id>
             <name>Spigot Repository</name>
             <url>https://hub.spigotmc.org/nexus/content/groups/public</url>
@@ -72,9 +76,14 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
+                <groupId>com.destroystokyo.paper</groupId>
+                <artifactId>paper-api</artifactId>
+                <version>1.13-R0.1-SNAPSHOT</version>
+            </dependency>
+            <dependency>
                 <groupId>org.spigotmc</groupId>
                 <artifactId>spigot-api</artifactId>
-                <version>1.12.2-R0.1-SNAPSHOT</version>
+                <version>1.13-R0.1-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>junit</groupId>
