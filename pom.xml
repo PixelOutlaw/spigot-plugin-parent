@@ -71,6 +71,11 @@
             <name>Spigot Repository</name>
             <url>https://hub.spigotmc.org/nexus/content/groups/public</url>
         </repository>
+        <repository>
+            <id>jitpack.io</id>
+            <name>Jitpack</name>
+            <url>https://jitpack.io</url>
+        </repository>
     </repositories>
 
     <dependencyManagement>
@@ -314,24 +319,6 @@
                     </plugin>
                 </plugins>
             </build>
-        </profile>
-        <profile>
-            <id>pixeloutlaw-distribution</id>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
-            <distributionManagement>
-                <repository>
-                    <id>pixeloutlaw-releases</id>
-                    <name>PixelOutlaw Repository</name>
-                    <url>https://artifactory.pixeloutlaw.io/artifactory/maven-releases</url>
-                </repository>
-                <snapshotRepository>
-                    <id>pixeloutlaw-snapshots</id>
-                    <name>PixelOutlaw Snapshot Repository</name>
-                    <url>https://artifactory.pixeloutlaw.io/artifactory/maven-snapshots</url>
-                </snapshotRepository>
-            </distributionManagement>
         </profile>
         <profile>
             <id>bintray-distribution</id>
