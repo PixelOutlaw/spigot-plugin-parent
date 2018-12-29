@@ -47,7 +47,7 @@
         <license>
             <name>MIT License</name>
             <url>
-                https://raw.githubusercontent.com/PixelOutlaw/spigot-plugin-parent/development/LICENSE
+                https://raw.githubusercontent.com/PixelOutlaw/spigot-plugin-parent/develop/LICENSE
             </url>
             <distribution>repo</distribution>
         </license>
