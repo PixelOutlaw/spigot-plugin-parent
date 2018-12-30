@@ -27,7 +27,7 @@
 
     <groupId>io.pixeloutlaw</groupId>
     <artifactId>spigot-plugin-parent</artifactId>
-    <version>1.13.2.1</version>
+    <version>1.13.2.2</version>
     <packaging>pom</packaging>
 
     <name>spigot-plugin-parent</name>
@@ -47,7 +47,7 @@
         <license>
             <name>MIT License</name>
             <url>
-                https://raw.githubusercontent.com/PixelOutlaw/spigot-plugin-parent/development/LICENSE
+                https://raw.githubusercontent.com/PixelOutlaw/spigot-plugin-parent/develop/LICENSE
             </url>
             <distribution>repo</distribution>
         </license>
@@ -66,7 +66,7 @@
         <project.build.javaVersion>1.8</project.build.javaVersion>
         <project.build.scmBranch>UNKNOWN</project.build.scmBranch>
         <project.build.scmCommit>UNKNOWN</project.build.scmCommit>
-        <kotlin.version>1.3.10</kotlin.version>
+        <kotlin.version>1.3.11</kotlin.version>
         <slf4j.version>1.7.25</slf4j.version>
     </properties>
 
@@ -86,6 +86,14 @@
             <url>https://jitpack.io</url>
         </repository>
     </repositories>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>jcenter</id>
+            <name>JCenter</name>
+            <url>https://jcenter.bintray.com/</url>
+        </pluginRepository>
+    </pluginRepositories>
 
     <dependencyManagement>
         <dependencies>
@@ -290,14 +298,28 @@
                 </executions>
             </plugin>
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-javadoc-plugin</artifactId>
-                <version>3.0.1</version>
+                <groupId>org.jetbrains.dokka</groupId>
+                <artifactId>dokka-maven-plugin</artifactId>
+                <version>0.9.17</version>
+                <configuration>
+                    <sourceRoots>
+                        <root>
+                            <path>src/main/kotlin</path>
+                            <!-- See platforms section of documentation -->
+                            <platforms>JVM</platforms>
+                        </root>
+                        <root>
+                            <path>src/main/java</path>
+                            <!-- See platforms section of documentation -->
+                            <platforms>JVM</platforms>
+                        </root>
+                    </sourceRoots>
+                </configuration>
                 <executions>
                     <execution>
-                        <id>attach-javadocs</id>
+                        <phase>package</phase>
                         <goals>
-                            <goal>jar</goal>
+                            <goal>javadocJar</goal>
                         </goals>
                     </execution>
                 </executions>
