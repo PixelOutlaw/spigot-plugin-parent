@@ -27,7 +27,7 @@
 
     <groupId>io.pixeloutlaw</groupId>
     <artifactId>spigot-plugin-parent</artifactId>
-    <version>1.14.0.1-SNAPSHOT</version>
+    <version>1.14.1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>spigot-plugin-parent</name>
@@ -100,12 +100,12 @@
             <dependency>
                 <groupId>com.destroystokyo.paper</groupId>
                 <artifactId>paper-api</artifactId>
-                <version>1.14-R0.1-SNAPSHOT</version>
+                <version>1.14.1-R0.1-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.spigotmc</groupId>
                 <artifactId>spigot-api</artifactId>
-                <version>1.14-R0.1-SNAPSHOT</version>
+                <version>1.14.1-R0.1-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.jetbrains.kotlin</groupId>
