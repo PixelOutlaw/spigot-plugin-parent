@@ -27,7 +27,7 @@
 
     <groupId>io.pixeloutlaw</groupId>
     <artifactId>spigot-plugin-parent</artifactId>
-    <version>1.14.4.3-SNAPSHOT</version>
+    <version>1.15.1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>spigot-plugin-parent</name>
@@ -66,8 +66,8 @@
         <project.build.javaVersion>1.8</project.build.javaVersion>
         <project.build.scmBranch>UNKNOWN</project.build.scmBranch>
         <project.build.scmCommit>UNKNOWN</project.build.scmCommit>
-        <minecraft.version>1.14.4-R0.1-SNAPSHOT</minecraft.version>
-        <kotlin.version>1.3.40</kotlin.version>
+        <minecraft.version>1.15.1-R0.1-SNAPSHOT</minecraft.version>
+        <kotlin.version>1.3.61</kotlin.version>
         <kotlin.compiler.incremental>true</kotlin.compiler.incremental>
     </properties>
 
