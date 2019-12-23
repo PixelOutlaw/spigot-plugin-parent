@@ -326,14 +326,6 @@
                                 </root>
                             </sourceRoots>
                             <platform>JVM</platform>
-                            <externalDocumentationLinks>
-                                <link>
-                                    <url>https://hub.spigotmc.org/javadocs/bukkit/</url>
-                                </link>
-                                <link>
-                                    <url>https://hub.spigotmc.org/javadocs/spigot/</url>
-                                </link>
-                            </externalDocumentationLinks>
                         </configuration>
                     </execution>
                 </executions>
