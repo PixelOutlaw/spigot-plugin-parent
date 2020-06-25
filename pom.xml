@@ -27,7 +27,7 @@
 
     <groupId>io.pixeloutlaw</groupId>
     <artifactId>spigot-plugin-parent</artifactId>
-    <version>1.15.2.1-SNAPSHOT</version>
+    <version>1.16.1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>spigot-plugin-parent</name>
@@ -66,9 +66,10 @@
         <project.build.javaVersion>1.8</project.build.javaVersion>
         <project.build.scmBranch>UNKNOWN</project.build.scmBranch>
         <project.build.scmCommit>UNKNOWN</project.build.scmCommit>
-        <minecraft.version>1.15.2-R0.1-SNAPSHOT</minecraft.version>
-        <kotlin.version>1.3.61</kotlin.version>
+        <minecraft.version>1.16.1-R0.1-SNAPSHOT</minecraft.version>
+        <kotlin.version>1.3.72</kotlin.version>
         <kotlin.compiler.incremental>true</kotlin.compiler.incremental>
+        <bintray.distribution.repo>https://api.bintray.com/maven/pixeloutlaw/pixeloutlaw-jars/spigot-plugin-parent/;publish=1</bintray.distribution.repo>
     </properties>
 
     <repositories>
@@ -351,7 +352,7 @@
                 <repository>
                     <id>bintray-pixeloutlaw-pixeloutlaw-jars</id>
                     <name>pixeloutlaw-pixeloutlaw-jars</name>
-                    <url>https://api.bintray.com/maven/pixeloutlaw/pixeloutlaw-jars/spigot-plugin-parent/;publish=1</url>
+                    <url>${bintray.distribution.repo}</url>
                 </repository>
             </distributionManagement>
         </profile>
