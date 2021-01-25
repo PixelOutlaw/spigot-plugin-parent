@@ -34,7 +34,7 @@ jobs:
                 "password": "${{ secrets.BINTRAY_PASSWORD }}"
             }]
       - name: Build with Maven
-        run: maven --batch-mode clean deploy -Pbintray-distribution
+        run: mvn --batch-mode clean deploy -Pbintray-distribution
       - name: "🚀 Create GitHub release"
         uses: actions/create-release@v1
         env:
