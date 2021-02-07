@@ -1,7 +1,7 @@
 plugins {
     `java-platform`
     id("nebula.maven-publish") version "17.3.2"
-    id("io.pixeloutlaw.gradle") version "4.0.0"
+    id("io.pixeloutlaw.gradle") version "4.1.0"
 }
 
 group = "io.pixeloutlaw"

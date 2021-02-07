@@ -38,7 +38,7 @@ jobs:
       - name: Test Library with Gradle
         run: ./gradlew check
       - name: Publish Library to Maven Central
-        run: ./gradlew publish
+        run: ./gradlew publishToSonatype
         env:
           ORG_GRADLE_PROJECT_signingKey: ${{ secrets.GPG_PRIVATE_KEY }}
           ORG_GRADLE_PROJECT_signingPassword: ${{ secrets.GPG_PASSWORD }}
