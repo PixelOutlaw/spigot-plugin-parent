@@ -43,7 +43,7 @@ dependencies {
     // normal dependencies go here
     constraints {
         api("com.destroystokyo.paper:paper-api:1.17-R0.1-SNAPSHOT")
-        api("junit:junit:4.13.1")
+        api("junit:junit:4.13.2")
         api("org.spigotmc:spigot-api:1.17-R0.1-SNAPSHOT")
     }
 }
