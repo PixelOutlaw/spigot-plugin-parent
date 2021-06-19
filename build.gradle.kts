@@ -1,12 +1,12 @@
 plugins {
     `java-platform`
     id("nebula.maven-publish") version "17.3.2"
-    id("io.pixeloutlaw.gradle") version "4.1.0"
+    id("io.pixeloutlaw.gradle") version "4.4.3"
 }
 
 group = "io.pixeloutlaw"
 description = "A parent project for Pixel Outlaw's Maven-based Spigot plugins."
-version = "1.16.5.6-SNAPSHOT"
+version = "1.17.0.0-SNAPSHOT"
 
 repositories {
     maven {
@@ -37,14 +37,14 @@ repositories {
 
 dependencies {
     // only platforms (BOMs) go up here
-    api(platform("org.jetbrains.kotlin:kotlin-bom:1.4.30"))
+    api(platform("org.jetbrains.kotlin:kotlin-bom:1.5.10"))
     api(platform("org.junit:junit-bom:5.7.1"))
 
     // normal dependencies go here
     constraints {
-        api("com.destroystokyo.paper:paper-api:1.16.5-R0.1-SNAPSHOT")
+        api("com.destroystokyo.paper:paper-api:1.17-R0.1-SNAPSHOT")
         api("junit:junit:4.13.1")
-        api("org.spigotmc:spigot-api:1.16.5-R0.1-SNAPSHOT")
+        api("org.spigotmc:spigot-api:1.17-R0.1-SNAPSHOT")
     }
 }
 
@@ -67,7 +67,6 @@ publishing {
 
             // add repositories
             pom {
-
                 withXml {
                     val root = asNode()
 
@@ -81,17 +80,6 @@ publishing {
                             appendNode("id", repository.name)
                             appendNode("url", repository.url.toString())
                         }
-                    }
-
-                    // handle plugin repository
-                    val pluginRepos = root.children().find {
-                        it is groovy.util.Node && it.name().toString()
-                            .endsWith("pluginRepositories")
-                    } as groovy.util.Node? ?: root.appendNode("pluginRepositories")
-                    pluginRepos.appendNode("pluginRepository").apply {
-                        appendNode("id", "jcenter")
-                        appendNode("name", "JCenter")
-                        appendNode("url", "https://jcenter.bintray.com/")
                     }
 
                     // handle properties
