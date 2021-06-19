@@ -38,7 +38,7 @@ repositories {
 dependencies {
     // only platforms (BOMs) go up here
     api(platform("org.jetbrains.kotlin:kotlin-bom:1.5.10"))
-    api(platform("org.junit:junit-bom:5.7.1"))
+    api(platform("org.junit:junit-bom:5.7.2"))
 
     // normal dependencies go here
     constraints {
