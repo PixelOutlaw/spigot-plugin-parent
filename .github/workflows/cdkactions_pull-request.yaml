@@ -25,6 +25,6 @@ jobs:
       - name: Make Gradle Wrapper Executable
         run: chmod +x ./gradlew
       - name: Set Gradle Version
-        run: ./gradlew wrapper --gradle-version 7.1
+        run: ./gradlew wrapper --gradle-version 7.1.1
       - name: Test Library with Gradle
         run: ./gradlew check
