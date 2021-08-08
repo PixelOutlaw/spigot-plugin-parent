@@ -6,7 +6,7 @@ plugins {
 
 group = "io.pixeloutlaw"
 description = "A parent project for Pixel Outlaw's Maven-based Spigot plugins."
-version = "1.17.1.1-SNAPSHOT"
+version = "1.17.1.2"
 
 repositories {
     maven {
