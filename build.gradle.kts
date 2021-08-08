@@ -6,7 +6,7 @@ plugins {
 
 group = "io.pixeloutlaw"
 description = "A parent project for Pixel Outlaw's Maven-based Spigot plugins."
-version = "1.17.0.1-SNAPSHOT"
+version = "1.17.1.0-SNAPSHOT"
 
 repositories {
     maven {
@@ -42,15 +42,15 @@ dependencies {
 
     // normal dependencies go here
     constraints {
-        api("com.destroystokyo.paper:paper-api:1.17-R0.1-SNAPSHOT")
+        api("com.destroystokyo.paper:paper-api:1.17.1-R0.1-SNAPSHOT")
         api("junit:junit:4.13.1")
-        api("org.spigotmc:spigot-api:1.17-R0.1-SNAPSHOT")
+        api("org.spigotmc:spigot-api:1.17.1-R0.1-SNAPSHOT")
     }
 }
 
 val mavenProperties = mapOf(
     "project.build.sourceEncoding" to "UTF-8",
-    "project.build.javaVersion" to "1.8",
+    "project.build.javaVersion" to "1.16",
     "kotlin.compiler.incremental" to "true"
 )
 
