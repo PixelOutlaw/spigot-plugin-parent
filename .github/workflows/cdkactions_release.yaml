@@ -39,14 +39,9 @@ jobs:
       - name: Test Library with Gradle
         run: ./gradlew check
       - name: Publish Library to Maven Central
-        run: ./gradlew publishToSonatype
+        run: ./gradlew publishToSonatype closeSonatypeStagingRepository
         env:
           ORG_GRADLE_PROJECT_signingKey: ${{ secrets.GPG_PRIVATE_KEY }}
           ORG_GRADLE_PROJECT_signingPassword: ${{ secrets.GPG_PASSWORD }}
-          OSSRH_USERNAME: ${{ secrets.OSSRH_USERNAME }}
-          OSSRH_PASSWORD: ${{ secrets.OSSRH_TOKEN }}
-      - name: Close and Release Repository on Maven Central
-        run: ./gradlew closeAndReleaseRepository
-        env:
           OSSRH_USERNAME: ${{ secrets.OSSRH_USERNAME }}
           OSSRH_PASSWORD: ${{ secrets.OSSRH_TOKEN }}

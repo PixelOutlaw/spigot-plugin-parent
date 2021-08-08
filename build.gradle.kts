@@ -1,12 +1,12 @@
 plugins {
     `java-platform`
-    id("nebula.maven-publish") version "17.3.2"
-    id("io.pixeloutlaw.gradle") version "4.4.3"
+    id("nebula.maven-publish") version "17.3.3"
+    id("io.pixeloutlaw.gradle") version "4.4.4"
 }
 
 group = "io.pixeloutlaw"
 description = "A parent project for Pixel Outlaw's Maven-based Spigot plugins."
-version = "1.17.1.0-SNAPSHOT"
+version = "1.17.1.1-SNAPSHOT"
 
 repositories {
     maven {
@@ -37,13 +37,13 @@ repositories {
 
 dependencies {
     // only platforms (BOMs) go up here
-    api(platform("org.jetbrains.kotlin:kotlin-bom:1.5.10"))
-    api(platform("org.junit:junit-bom:5.7.1"))
+    api(platform("org.jetbrains.kotlin:kotlin-bom:1.5.21"))
+    api(platform("org.junit:junit-bom:5.7.2"))
 
     // normal dependencies go here
     constraints {
         api("com.destroystokyo.paper:paper-api:1.17.1-R0.1-SNAPSHOT")
-        api("junit:junit:4.13.1")
+        api("junit:junit:4.13.2")
         api("org.spigotmc:spigot-api:1.17.1-R0.1-SNAPSHOT")
     }
 }
