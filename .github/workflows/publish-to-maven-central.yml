@@ -1,0 +1,50 @@
+# See for more info: https://bjansen.github.io/java/2021/02/03/deploying-to-maven-central-using-github-actions.html
+
+# Name of the job
+name: Publish package to the Maven Central Repository
+
+# Triggers the workflow on GitHub release creation events
+on:
+  release:
+    types: [created]
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      # Get the Source Code from GitHub
+      - name: Checkout Source Code
+        uses: actions/checkout@v2
+
+      # Determine the version from the GitHub release tag
+      - name: Get the Version
+        id: get_version
+        run: echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\//}
+
+      # Sets up publication to Maven Central:
+      # https://github.com/actions/setup-java/blob/main/docs/advanced-usage.md#Publishing-using-Apache-Maven
+      - name: Set up Maven Central Repository
+        uses: actions/setup-java@v2
+        with:
+          java-version: '16'
+          distribution: 'adopt'
+          server-id: ossrh # Value of the distributionManagement/repository/id field of the pom.xml
+          server-username: MAVEN_USERNAME # env variable for username in deploy
+          server-password: MAVEN_PASSWORD # env variable for token in deploy
+          gpg-private-key: ${{ secrets.GPG_PRIVATE_KEY }} # Value of the GPG private key to import
+          gpg-passphrase: GPG_PASSWORD # env variable for GPG private key passphrase
+
+      # Sets the version in the pom.xml from the created release automatically
+      - name: Set version in pom.xml
+        run: mvn versions:set -DnewVersion=${{ steps.get_version.outputs.VERSION }}
+
+      # Actually deploys to Maven Central:
+      # https://github.com/actions/setup-java/blob/main/docs/advanced-usage.md#Publishing-using-Apache-Maven
+      - name: Publish package
+        run: mvn --batch-mode -Prelease deploy
+        env:
+          MAVEN_USERNAME: ${{ secrets.OSSRH_USERNAME }}
+          MAVEN_PASSWORD: ${{ secrets.OSSRH_TOKEN }}
+          GPG_PASSWORD: ${{ secrets.GPG_PASSWORD }}
+          # https://github.com/Kotlin/dokka/issues/2023
+          MAVEN_OPTS: "--illegal-access=permit"
