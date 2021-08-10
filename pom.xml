@@ -40,7 +40,9 @@
 
     <name>spigot-plugin-parent</name>
     <description>A parent project for Pixel Outlaw's Maven-based Spigot plugins.</description>
+
     <inceptionYear>2015</inceptionYear>
+    <url>https://github.com/PixelOutlaw/spigot-plugin-parent</url>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
